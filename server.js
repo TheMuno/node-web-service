@@ -63,6 +63,7 @@ async function promptGemini(prompt, tryOut=false) {
     const result = await model.generateContent(prompt);
     const response = await result.response;
 
+    console.log('result:::', result)
     console.log('usage_metadata:::', result.usage_metadata);
 
     return response.text();
