@@ -46,8 +46,8 @@ app.post('/', async (req, res) => {
 
 // trigger gemini with the prompt 
 async function promptGemini(prompt, tryOut=false) {
-    // const modelObj = { model: 'gemini-1.5-flash' };
-    const modelObj = { model: 'gemini-1.5-pro' };
+    const modelObj = { model: 'gemini-1.5-flash' };
+    // const modelObj = { model: 'gemini-1.5-pro' };
     // const modelObj = { model: 'gemini-1.5-flash-8b' };
 
     if (!tryOut) modelObj.generationConfig = { responseMimeType: 'application/json' };
