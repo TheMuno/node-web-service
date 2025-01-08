@@ -6,7 +6,8 @@ app.listen(port, () => console.log(`Server has started on port: ${port}`));
 
 // init gemini api
 const { GoogleGenerativeAI } = require('@google/generative-ai');
-const genAI = new GoogleGenerativeAI('AIzaSyBsQe9jWhtqx9Xgw0TNfipo2pErGpBp-vc');
+// const genAI = new GoogleGenerativeAI('AIzaSyBsQe9jWhtqx9Xgw0TNfipo2pErGpBp-vc');
+const genAI = new GoogleGenerativeAI('AIzaSyBDqj_QhuZiju7dYPKFYaMFbH1mKKignOQ');
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -64,7 +65,7 @@ async function promptGemini(prompt, tryOut=false) {
     const response = await result.response;
 
     console.log('result:::', result)
-    console.log('usage_metadata:::', result.usage_metadata);
+    console.log('usage_metadata:::', result.response.usage_metadata);
 
     return response.text();
 }
