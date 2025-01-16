@@ -101,7 +101,9 @@ if (localStorage['ak-travel-days']) {
   const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   let [ firstDate, lastDate ] = flatpickrDate.split(/\s+to\s+/);
+  firstDate = new Date(firstDate);
   firstDate = `${monthArr[firstDate.getMonth()]} ${firstDate.getDate()}`;
+  lastDate = new Date(lastDate);
   lastDate = `${monthArr[lastDate.getMonth()]} ${lastDate.getDate()}`;
 
   const titleDates = `${firstDate} - ${lastDate}`;
